@@ -5,12 +5,18 @@
 // - Si vencen los X segundos y el usuario no ha introducido una palabra el juego termina indicando la puntuación obtenida (número de palabras introducidas) y la lista de palabras introducidas.
 // Para la entrega, sube los archivos a github y pon enlace en el texto en línea.
 // Los criterios de evaluación implicados en este control son: RA2 (CE2e, CE2f, CE2g y CE2h), RA3 (CE3c y CE3d) y RA4 (CE4i).
-let arrLetras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-let letra = document.getElementById("letra");
-let pos='';
-let longitudArrLetras =arrLetras.length;
-for (let i = 0; i < arrLetras.length; i++) {
+
+const boton = document.getElementById("btnAle");
+boton.addEventListener('click', letraAleatoria);
+function letraAleatoria(){
+        let arrLetras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        let letra = document.getElementById("letra");
+        let pos='';
+        let longitudArrLetras = arrLetras.length;
+
         pos=Math.floor(Math.random()*longitudArrLetras);
-}
-console.log(pos);
+        
+        letra.textContent = arrLetras[pos];
+};
+
 //letra.addEventListener();
